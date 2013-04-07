@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SampleLog.Provider;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -17,7 +18,8 @@ namespace SampleLog.Controllers
             return View();
         }
 
-        public ActionResult About()
+        [CryptoValueProvider]
+        public ActionResult About(int id)
         {
             ViewBag.Message = "Your app description page.";
             Trace.TraceError("Oh, no! That's bad");
